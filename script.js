@@ -83,7 +83,7 @@ const translations = {
     contactBtn: 'Відправити',
     title: 'Mechanik Plus - Автосервіс',
     footerContactTitle: 'Контакт',
-    footerPhone: 'Телефон: +420 123 456 789',
+    footerPhone: 'Телефон: +420 777 318 202',
     footerEmail: 'Електронна пошта: info@mechanikplus.cz',
     footerAddress: 'Líšný 2.díl 6, 468 22 Líšný-Železný Brod, Чехія',
     footerMap: 'https://www.google.com/maps?q=Líšný+2.díl+6,+468+22+Líšný-Železný+Brod,+Чехія&output=embed',
@@ -142,7 +142,7 @@ const translations = {
     contactBtn: 'Send',
     title: 'Mechanik Plus - Car Service',
     footerContactTitle: 'Contact',
-    footerPhone: 'Phone: +420 123 456 789',
+    footerPhone: 'Phone: +420 777 318 202',
     footerEmail: 'Email: info@mechanikplus.cz',
     footerAddress: 'Líšný 2.díl 6, 468 22 Líšný-Železný Brod, Czechia',
     footerMap: 'https://www.google.com/maps?q=Líšný+2.díl+6,+468+22+Líšný-Železný+Brod,+Czechia&output=embed',
@@ -313,4 +313,5 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
 
