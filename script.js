@@ -24,7 +24,7 @@ const translations = {
     contactBtn: 'Odeslat',
     title: 'Mechanik Plus - Autoservis',
     footerContactTitle: 'Kontakt',
-    footerPhone: 'Telefon: +420 123 456 789',
+    footerPhone: 'Telefon: +420 777 318 202',
     footerEmail: 'Email: info@mechanikplus.cz',
     footerAddress: 'Líšný 2.díl 6, 468 22 Líšný-Železný Brod, Česko',
     footerMap: 'https://www.google.com/maps?q=Líšný+2.díl+6,+468+22+Líšný-Železný+Brod,+Česko&output=embed',
@@ -313,3 +313,4 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
