@@ -24,7 +24,8 @@ const translations = {
     contactBtn: 'Odeslat',
     title: 'Mechanik Plus - Autoservis',
     footerContactTitle: 'Kontakt',
-    footerPhone: 'Telefon: +420 777 318 202',
+    footerPhone1: 'Telefon: +420 777 318 202',
+    footerPhone2: 'Telefon: +420 773 977 965',
     footerEmail: 'Email: info@mechanikplus.cz',
     footerAddress: 'Líšný 2.díl 6, 468 22 Líšný-Železný Brod, Česko',
     footerMap: 'https://www.google.com/maps?q=Líšný+2.díl+6,+468+22+Líšný-Železný+Brod,+Česko&output=embed',
@@ -83,7 +84,8 @@ const translations = {
     contactBtn: 'Відправити',
     title: 'Mechanik Plus - Автосервіс',
     footerContactTitle: 'Контакт',
-    footerPhone: 'Телефон: +420 777 318 202',
+    footerPhone1: 'Телефон: +420 777 318 202',
+    footerPhone2: 'Телефон: +420 773 977 965',
     footerEmail: 'Електронна пошта: info@mechanikplus.cz',
     footerAddress: 'Líšný 2.díl 6, 468 22 Líšný-Železný Brod, Чехія',
     footerMap: 'https://www.google.com/maps?q=Líšný+2.díl+6,+468+22+Líšný-Železný+Brod,+Чехія&output=embed',
@@ -142,7 +144,8 @@ const translations = {
     contactBtn: 'Send',
     title: 'Mechanik Plus - Car Service',
     footerContactTitle: 'Contact',
-    footerPhone: 'Phone: +420 777 318 202',
+    footerPhone1: 'Phone: +420 777 318 202',
+    footerPhone2: 'Phone: +420 773 977 965',
     footerEmail: 'Email: info@mechanikplus.cz',
     footerAddress: 'Líšný 2.díl 6, 468 22 Líšný-Železný Brod, Czechia',
     footerMap: 'https://www.google.com/maps?q=Líšný+2.díl+6,+468+22+Líšný-Železný+Brod,+Czechia&output=embed',
@@ -223,10 +226,17 @@ function setLanguage(lang) {
   if (document.getElementById('contact-message')) document.getElementById('contact-message').placeholder = t.contactMessage;
   if (document.getElementById('contact-btn')) document.getElementById('contact-btn').textContent = t.contactBtn;
   if (document.getElementById('footer-contact-title')) document.getElementById('footer-contact-title').textContent = t.footerContactTitle;
-  if (document.getElementById('footer-phone')) document.getElementById('footer-phone').textContent = t.footerPhone;
+  if (document.getElementById('footer-phone-1')) document.getElementById('footer-phone-1').textContent = t.footerPhone1;
+  if (document.getElementById('footer-phone-2')) document.getElementById('footer-phone-2').textContent = t.footerPhone2;
+  // Fallback for old single footer-phone element
+  if (document.getElementById('footer-phone')) document.getElementById('footer-phone').textContent = t.footerPhone1 || t.footerPhone;
   if (document.getElementById('footer-email')) document.getElementById('footer-email').textContent = t.footerEmail;
   if (document.getElementById('footer-address')) document.getElementById('footer-address').textContent = t.footerAddress;
   if (document.getElementById('footer-map')) document.getElementById('footer-map').src = t.footerMap;
+  if (document.getElementById('footer-hours-title')) document.getElementById('footer-hours-title').textContent = t.footerHoursTitle;
+  if (document.getElementById('footer-hours-monfri')) document.getElementById('footer-hours-monfri').textContent = t.footerHoursMonFri;
+  if (document.getElementById('footer-hours-sat')) document.getElementById('footer-hours-sat').textContent = t.footerHoursSat;
+  if (document.getElementById('footer-hours-sun')) document.getElementById('footer-hours-sun').textContent = t.footerHoursSun;
   if (document.getElementById('fotovideo-title')) document.getElementById('fotovideo-title').textContent = t.navFotovideo;
   // Update gallery group titles if present
   if (document.getElementById('gallery-group-title')) document.getElementById('gallery-group-title').textContent = t.repairHeadTitle;
@@ -280,6 +290,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const selected = this.dataset.lang;
         if (selected) {
           setLanguage(selected);
+          localStorage.setItem('siteLang', selected);
           // close list
           langListEl.classList.remove('show');
         }
