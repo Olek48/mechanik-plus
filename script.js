@@ -228,8 +228,6 @@ function setLanguage(lang) {
   if (document.getElementById('footer-contact-title')) document.getElementById('footer-contact-title').textContent = t.footerContactTitle;
   if (document.getElementById('footer-phone-1')) document.getElementById('footer-phone-1').textContent = t.footerPhone1;
   if (document.getElementById('footer-phone-2')) document.getElementById('footer-phone-2').textContent = t.footerPhone2;
-  // Fallback for old single footer-phone element
-  if (document.getElementById('footer-phone')) document.getElementById('footer-phone').textContent = t.footerPhone1 || t.footerPhone;
   if (document.getElementById('footer-email')) document.getElementById('footer-email').textContent = t.footerEmail;
   if (document.getElementById('footer-address')) document.getElementById('footer-address').textContent = t.footerAddress;
   if (document.getElementById('footer-map')) document.getElementById('footer-map').src = t.footerMap;
