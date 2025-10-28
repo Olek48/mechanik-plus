@@ -26,7 +26,7 @@ const translations = {
     footerContactTitle: 'Kontakt',
     footerPhone1: 'Telefon: +420 777 318 202',
     footerPhone2: 'Telefon: +420 773 977 965',
-    footerEmail: 'Email: info@mechanikplus.cz',
+    footerEmail: 'mehanik.plus.cz@gmail.com',
     footerAddress: 'Líšný 2.díl 6, 468 22 Líšný-Železný Brod, Česko',
     footerMap: 'https://www.google.com/maps?q=Líšný+2.díl+6,+468+22+Líšný-Železný+Brod,+Česko&output=embed',
     footerHoursTitle: 'Otevírací doba',
@@ -86,7 +86,7 @@ const translations = {
     footerContactTitle: 'Контакт',
     footerPhone1: 'Телефон: +420 777 318 202',
     footerPhone2: 'Телефон: +420 773 977 965',
-    footerEmail: 'Електронна пошта: info@mechanikplus.cz',
+    footerEmail: 'mehanik.plus.cz@gmail.com',
     footerAddress: 'Líšný 2.díl 6, 468 22 Líšný-Železný Brod, Чехія',
     footerMap: 'https://www.google.com/maps?q=Líšný+2.díl+6,+468+22+Líšný-Železný+Brod,+Чехія&output=embed',
     footerHoursTitle: 'Години роботи',
@@ -146,7 +146,7 @@ const translations = {
     footerContactTitle: 'Contact',
     footerPhone1: 'Phone: +420 777 318 202',
     footerPhone2: 'Phone: +420 773 977 965',
-    footerEmail: 'Email: info@mechanikplus.cz',
+    footerEmail: 'mehanik.plus.cz@gmail.com',
     footerAddress: 'Líšný 2.díl 6, 468 22 Líšný-Železný Brod, Czechia',
     footerMap: 'https://www.google.com/maps?q=Líšný+2.díl+6,+468+22+Líšný-Železný+Brod,+Czechia&output=embed',
     footerHoursTitle: 'Opening Hours',
@@ -158,7 +158,7 @@ const translations = {
     galleryFuelTitle: 'Fuel system diagnostics and repair',
     galleryDSGTitle: 'DSG7 automatic gearbox repair',
     galleryTimingTitle: 'Timing chain replacement',
-    gallerySuspensionTitle: 'Suspension and pneumatic suspension repair',
+    gallerySuspensionTitle: 'Suspension and Air Suspension Repair',
     galleryElectricsTitle: 'Diagnostics and repair of electrical systems',
     galleryHeatingTitle: 'Heating and air conditioning repair',
     galleryOilPressureTitle: 'Oil pressure measurement',
@@ -322,5 +322,3 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
-
-
