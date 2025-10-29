@@ -474,7 +474,10 @@ body {
     min-height: 200px;
   }
   .gallery-group {
-    margin-top: 24px !important;
+    margin-top: 24px;
+  }
+  .gallery .gallery-group {
+    margin-top: 24px;
   }
   .gallery-group-title {
     font-size: 1.1rem;
@@ -498,8 +501,12 @@ body {
     min-height: 150px;
   }
   main {
-    padding: 0 8px !important;
-    margin-top: 30px !important;
+    padding: 0 8px;
+    margin-top: 30px;
+  }
+  body.page-wrapper main {
+    padding: 0 8px;
+    margin-top: 30px;
   }
   #fotovideo-title {
     font-size: 1.4rem;
@@ -874,8 +881,9 @@ body {
   .header {
     padding: 12px 8px;
   }
-  .logo-img {
-    width: 160px !important;
+  .header .logo .logo-img,
+  .header .logo a .logo-img {
+    width: 160px;
   }
   .nav a {
     font-size: 0.95rem;
