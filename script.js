@@ -19,6 +19,7 @@ const translations = {
     service4Desc: 'Přezutí, vyvážení a sezónní výměna pneumatik.',
     contactTitle: 'Kontaktujte nás',
     contactName: 'Jméno',
+    contactEmail: 'E-mail (nepovinné)',
     contactPhone: 'Telefon',
     contactMessage: 'Zpráva',
     contactBtn: 'Odeslat',
@@ -83,6 +84,7 @@ const translations = {
     service4Desc: 'Монтаж, балансування та сезонна заміна шин.',
     contactTitle: 'Звʼяжіться з нами',
     contactName: "Ім'я",
+    contactEmail: 'E-mail (необовʼязково)',
     contactPhone: 'Телефон',
     contactMessage: 'Повідомлення',
     contactBtn: 'Відправити',
@@ -147,6 +149,7 @@ const translations = {
     service4Desc: 'Mounting, balancing, and seasonal tire change.',
     contactTitle: 'Contact Us',
     contactName: 'Name',
+    contactEmail: 'E-mail (optional)',
     contactPhone: 'Phone',
     contactMessage: 'Message',
     contactBtn: 'Send',
@@ -234,6 +237,7 @@ function setLanguage(lang) {
   if (document.getElementById('service12-desc')) document.getElementById('service12-desc').textContent = t.service12Desc;
   if (document.getElementById('contact-title')) document.getElementById('contact-title').textContent = t.contactTitle;
   if (document.getElementById('contact-name')) document.getElementById('contact-name').placeholder = t.contactName;
+  if (document.getElementById('contact-email')) document.getElementById('contact-email').placeholder = t.contactEmail;
   if (document.getElementById('contact-phone')) document.getElementById('contact-phone').placeholder = t.contactPhone;
   if (document.getElementById('contact-message')) document.getElementById('contact-message').placeholder = t.contactMessage;
   if (document.getElementById('contact-btn')) document.getElementById('contact-btn').textContent = t.contactBtn;
