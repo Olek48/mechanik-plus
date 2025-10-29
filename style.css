@@ -83,7 +83,6 @@ body {
   margin-bottom: 12px;
   color: #111;
   text-shadow: 0 2px 8px #ff660033;
-  white-space: nowrap;
 }
 .hero p {
   font-size: 1.2rem;
@@ -461,59 +460,148 @@ body {
 @media (max-width: 700px) {
   .gallery {
     grid-template-columns: 1fr;
-    gap: 12px;
-    max-width: 98vw;
+    gap: 16px;
+    max-width: 100%;
+    padding: 0 8px;
   }
   .gallery-item {
-    max-width: 96vw;
+    max-width: 100%;
+    width: 100%;
   }
   .gallery-item img {
-    max-width: 92vw;
-    height: 140px;
+    max-width: 100%;
+    height: auto;
+    min-height: 200px;
+  }
+  .gallery-group {
+    margin-top: 24px !important;
+  }
+  .gallery-group-title {
+    font-size: 1.1rem;
+    padding: 0 12px;
   }
 }
 @media (max-width: 480px) {
   .gallery {
     grid-template-columns: 1fr;
-    gap: 8px;
-    max-width: 100vw;
+    gap: 12px;
+    max-width: 100%;
+    padding: 0 4px;
   }
   .gallery-item {
-    max-width: 98vw;
+    max-width: 100%;
+    padding: 6px;
   }
   .gallery-item img {
-    max-width: 96vw;
-    height: 90px;
+    max-width: 100%;
+    height: auto;
+    min-height: 150px;
+  }
+  main {
+    padding: 0 8px !important;
+    margin-top: 30px !important;
+  }
+  #fotovideo-title {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
   }
 }
 @media (max-width: 700px) {
   .header {
     flex-direction: column;
-    gap: 12px;
-    padding: 18px 10px;
+    gap: 16px;
+    padding: 16px 12px;
+  }
+  .nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+  }
+  .nav a {
+    margin-left: 0;
+    width: 90%;
+    max-width: 300px;
+    text-align: center;
+  }
+  .lang-select {
+    margin-left: 0;
+    margin-top: 4px;
+  }
+  .hero h1 {
+    font-size: 1.8rem;
+    white-space: normal;
+    padding: 0 10px;
+  }
+  .hero p {
+    font-size: 1rem;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .hero {
+    padding: 40px 12px;
   }
   .cards {
-    flex-direction: column;
+    grid-template-columns: 1fr;
     gap: 20px;
   }
+  .card {
+    margin: 0 auto;
+    max-width: 100%;
+  }
   .services {
-    padding: 0 8px;
+    padding: 0 12px;
   }
   .contact {
-    padding: 24px 8px;
+    padding: 24px 12px;
+    margin-left: 12px;
+    margin-right: 12px;
   }
   .footer-content {
     flex-direction: column;
-    gap: 20px;
+    gap: 24px;
     align-items: stretch;
+    padding: 0 12px;
+  }
+  .footer-info, .footer-hours {
+    text-align: center;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .footer-map {
+    width: 100%;
   }
   .footer-map iframe {
     width: 100%;
     min-width: 220px;
-    height: 180px;
+    height: 200px;
   }
 }
 @media (max-width: 900px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 12px;
+  }
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+  }
+  .nav a {
+    margin-left: 0;
+    flex: 0 1 auto;
+    min-width: 100px;
+  }
+  .lang-select {
+    margin-left: 0;
+    flex: 0 1 auto;
+  }
   .footer-content {
     flex-direction: column;
     gap: 20px;
@@ -527,8 +615,8 @@ body {
     height: 220px;
   }
   .footer-hours, .footer-info {
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 12px;
+    padding-right: 12px;
   }
 }
 @media (max-width: 1300px) {
@@ -564,20 +652,21 @@ body {
     gap: 24px;
   }
   .services {
-    padding: 0 8px;
+    padding: 0 12px;
   }
   .contact {
-    padding: 24px 8px;
+    padding: 24px 12px;
+    max-width: 90%;
   }
   .footer-content {
     flex-direction: column;
-    gap: 20px;
+    gap: 24px;
     align-items: stretch;
   }
   .footer-map iframe {
     width: 100%;
     min-width: 220px;
-    height: 180px;
+    height: 200px;
   }
 }
 @media (max-width: 700px) {
@@ -702,6 +791,30 @@ body {
   line-height: 1.6;
 }
 
+/* Mobile optimization for notification modal */
+@media (max-width: 480px) {
+  .notification-content {
+    padding: 30px 24px;
+    width: 85%;
+  }
+  .notification-content h3 {
+    font-size: 1.4rem;
+  }
+  .notification-content p {
+    font-size: 1rem;
+  }
+  .notification-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 2.2rem;
+  }
+  .notification-close {
+    top: 10px;
+    right: 15px;
+    font-size: 1.6rem;
+  }
+}
+
 /* Gallery modal (lightbox) styles */
 .gallery-modal {
   display: none;
@@ -753,5 +866,73 @@ body {
   .gallery-modal-img {
     max-width: 98vw;
     max-height: 70vh;
+  }
+}
+
+/* Additional mobile optimizations for very small screens */
+@media (max-width: 480px) {
+  .header {
+    padding: 12px 8px;
+  }
+  .logo-img {
+    width: 160px !important;
+  }
+  .nav a {
+    font-size: 0.95rem;
+    padding: 8px 18px;
+  }
+  #lang-btn {
+    font-size: 0.95rem;
+    padding: 8px 18px;
+  }
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+  .hero p {
+    font-size: 0.95rem;
+  }
+  .btn {
+    font-size: 0.95rem;
+    padding: 10px 24px;
+  }
+  .services h2 {
+    font-size: 1.5rem;
+  }
+  .card {
+    padding: 20px 16px;
+  }
+  .card h3 {
+    font-size: 1.1rem;
+  }
+  .card p {
+    font-size: 0.95rem;
+  }
+  .contact h2 {
+    font-size: 1.4rem;
+  }
+  .footer {
+    padding: 40px 0 32px 0;
+  }
+  .footer-info, .footer-hours {
+    font-size: 1rem;
+  }
+  .footer-info h3, .footer-hours h3 {
+    font-size: 1.1rem;
+  }
+}
+
+/* Landscape orientation fixes for mobile */
+@media (max-width: 900px) and (orientation: landscape) {
+  .hero {
+    min-height: 180px;
+    padding: 24px 12px;
+  }
+  .hero h1 {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+  }
+  .hero p {
+    font-size: 1rem;
+    margin-bottom: 16px;
   }
 }
