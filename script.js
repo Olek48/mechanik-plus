@@ -59,6 +59,10 @@ const translations = {
     service11Desc: 'Profesionální antikorozní úprava karoserie a podvozku.',
     service12Title: 'Výměna prahů',
     service12Desc: 'Kvalitní výměna a oprava prahů automobilu.',
+    formSuccessTitle: 'Úspěšně odesláno!',
+    formSuccessMessage: 'Děkujeme za vaši zprávu. Brzy se vám ozveme.',
+    formErrorTitle: 'Chyba při odesílání',
+    formErrorMessage: 'Omlouváme se, ale nepodařilo se odeslat zprávu. Zkuste to prosím znovu nebo nás kontaktujte přímo telefonicky.',
   },
   uk: {
     navServices: 'Послуги',
@@ -119,6 +123,10 @@ const translations = {
     service11Desc: 'Професійна антикорозійна обробка кузова та підвіски.',
     service12Title: 'Заміна порогів',
     service12Desc: 'Якісна заміна та ремонт порогів автомобіля.',
+    formSuccessTitle: 'Успішно надіслано!',
+    formSuccessMessage: 'Дякуємо за ваше повідомлення. Ми зв\'яжемося з вами найближчим часом.',
+    formErrorTitle: 'Помилка відправки',
+    formErrorMessage: 'Вибачте, не вдалося надіслати повідомлення. Будь ласка, спробуйте ще раз або зв\'яжіться з нами безпосередньо по телефону.',
   },
   en: {
     navServices: 'Services',
@@ -179,6 +187,10 @@ const translations = {
     service11Desc: 'Professional anti-corrosion treatment of body and suspension.',
     service12Title: 'Sill Replacement',
     service12Desc: 'Quality replacement and repair of car sills.',
+    formSuccessTitle: 'Successfully Sent!',
+    formSuccessMessage: 'Thank you for your message. We will contact you soon.',
+    formErrorTitle: 'Sending Error',
+    formErrorMessage: 'Sorry, we could not send your message. Please try again or contact us directly by phone.',
   }
 };
 
@@ -320,5 +332,103 @@ document.addEventListener('DOMContentLoaded', function() {
         target.scrollIntoView({ behavior: 'smooth' });
       }
     });
+  });
+
+  // Contact Form Submission Handler
+  const contactForm = document.getElementById('contact-form');
+  const notificationModal = document.getElementById('notification-modal');
+  const notificationClose = document.getElementById('notification-close');
+  const notificationIcon = document.getElementById('notification-icon');
+  const notificationTitle = document.getElementById('notification-title');
+  const notificationMessage = document.getElementById('notification-message');
+
+  function showNotification(success) {
+    const currentLang = localStorage.getItem('siteLang') || 'cs';
+    const t = translations[currentLang];
+    
+    // Reset classes
+    notificationIcon.className = 'notification-icon';
+    
+    if (success) {
+      notificationIcon.classList.add('success');
+      notificationTitle.textContent = t.formSuccessTitle;
+      notificationMessage.textContent = t.formSuccessMessage;
+    } else {
+      notificationIcon.classList.add('error');
+      notificationTitle.textContent = t.formErrorTitle;
+      notificationMessage.textContent = t.formErrorMessage;
+    }
+    
+    notificationModal.classList.add('show');
+  }
+
+  function hideNotification() {
+    notificationModal.classList.remove('show');
+  }
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const formData = new FormData(contactForm);
+      const formAction = contactForm.getAttribute('action');
+      
+      // Show loading state (optional - could add spinner)
+      const submitBtn = document.getElementById('contact-btn');
+      const originalBtnText = submitBtn.textContent;
+      submitBtn.disabled = true;
+      submitBtn.textContent = '...';
+      
+      fetch(formAction, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      .then(response => {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalBtnText;
+        
+        if (response.ok) {
+          showNotification(true);
+          contactForm.reset();
+        } else {
+          return response.json().then(data => {
+            if (data.errors) {
+              showNotification(false);
+            } else {
+              showNotification(false);
+            }
+          });
+        }
+      })
+      .catch(error => {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalBtnText;
+        showNotification(false);
+      });
+    });
+  }
+
+  // Close notification modal on click
+  if (notificationClose) {
+    notificationClose.addEventListener('click', hideNotification);
+  }
+
+  // Close notification modal when clicking outside
+  if (notificationModal) {
+    notificationModal.addEventListener('click', function(e) {
+      if (e.target === notificationModal) {
+        hideNotification();
+      }
+    });
+  }
+
+  // Close notification on Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' || e.key === 'Esc') {
+      hideNotification();
+    }
   });
 });
