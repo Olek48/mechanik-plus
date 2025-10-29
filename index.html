@@ -150,13 +150,23 @@
 
   <section class="contact" id="contact">
     <h2 id="contact-title">Kontaktujte nás</h2>
-    <form class="contact-form">
+    <form class="contact-form" id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
       <input type="text" name="name" id="contact-name" placeholder="Jméno" required>
       <input type="tel" name="phone" id="contact-phone" placeholder="Telefon" required>
       <textarea name="message" id="contact-message" placeholder="Zpráva" required></textarea>
       <button type="submit" class="btn" id="contact-btn">Odeslat</button>
     </form>
   </section>
+
+  <!-- Notification Modal -->
+  <div id="notification-modal" class="notification-modal">
+    <div class="notification-content">
+      <span class="notification-close" id="notification-close">&times;</span>
+      <div class="notification-icon" id="notification-icon"></div>
+      <h3 id="notification-title"></h3>
+      <p id="notification-message"></p>
+    </div>
+  </div>
 
   <footer class="footer">
     <div class="footer-content">
