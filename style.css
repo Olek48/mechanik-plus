@@ -3,6 +3,15 @@ body {
   font-family: 'Segoe UI', Arial, sans-serif;
   background: #fff;
   color: #222;
+  overflow-x: hidden;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 .header {
@@ -14,6 +23,8 @@ body {
   border-radius: 0 0 20px 20px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.12);
   border-bottom: 3px solid #ff6600;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 .logo {
   font-size: 2rem;
@@ -115,6 +126,7 @@ body {
   max-width: 900px;
   margin: 60px auto 0 auto;
   padding: 0 20px;
+  overflow-x: hidden;
 }
 .services h2 {
   text-align: center;
@@ -272,6 +284,9 @@ body {
   border-radius: 20px 20px 0 0;
   margin-top: 80px;
   padding: 80px 0 48px 0;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 .footer-content {
   display: flex;
