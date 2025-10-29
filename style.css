@@ -24,7 +24,9 @@ html {
   box-shadow: 0 2px 12px rgba(0,0,0,0.12);
   border-bottom: 3px solid #ff6600;
   max-width: 100%;
+  width: 100%;
   box-sizing: border-box;
+  margin: 0;
 }
 .logo {
   font-size: 2rem;
@@ -285,6 +287,7 @@ html {
   margin-top: 80px;
   padding: 80px 0 48px 0;
   max-width: 100%;
+  width: 100%;
   box-sizing: border-box;
   overflow: hidden;
 }
@@ -533,6 +536,10 @@ html {
     flex-direction: column;
     gap: 16px;
     padding: 16px 12px;
+    border-radius: 0;
+  }
+  .footer {
+    border-radius: 0;
   }
   .nav {
     display: flex;
@@ -606,6 +613,10 @@ html {
     align-items: center;
     gap: 14px;
     padding: 18px 12px;
+    border-radius: 0;
+  }
+  .footer {
+    border-radius: 0;
   }
   .nav {
     display: flex;
@@ -895,6 +906,10 @@ html {
 @media (max-width: 480px) {
   .header {
     padding: 12px 8px;
+    border-radius: 0;
+  }
+  .footer {
+    border-radius: 0;
   }
   .header .logo .logo-img,
   .header .logo a .logo-img {
