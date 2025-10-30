@@ -147,8 +147,6 @@ html {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 32px;
-  flex-wrap: wrap;
-  justify-content: center;
 }
 
 /* Desktop: responsive grid that adapts to container width */
@@ -474,7 +472,6 @@ html {
     max-width: 1200px;
   }
 }
-
 
 /* Responsive gallery */
 @media (max-width: 1500px) {
