@@ -130,6 +130,13 @@ html {
   padding: 0 20px;
   overflow-x: hidden;
 }
+
+/* Desktop: allow wider services container for 3-4 columns */
+@media (min-width: 900px) {
+  .services {
+    max-width: 1200px;
+  }
+}
 .services h2 {
   text-align: center;
   margin-bottom: 32px;
@@ -140,8 +147,13 @@ html {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 32px;
-  flex-wrap: wrap;
-  justify-content: center;
+}
+
+/* Desktop: responsive grid that adapts to container width */
+@media (min-width: 900px) {
+  .cards {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
 }
 .card {
   background: #111;
@@ -154,6 +166,14 @@ html {
   text-align: center;
   color: #fff;
   margin: 8px;
+}
+
+/* Desktop: remove max-width to allow rectangular cards */
+@media (min-width: 900px) {
+  .card {
+    max-width: none;
+    margin: 0;
+  }
 }
 .card:hover {
   background: #222;
@@ -444,6 +464,13 @@ html {
 .gallery-group-title {
   font-size: 1.05rem;
   margin-bottom: 6px;
+}
+
+/* Desktop: match fotovideo main container width with services */
+@media (min-width: 900px) {
+  body.page-wrapper main {
+    max-width: 1200px;
+  }
 }
 
 /* Responsive gallery */
