@@ -373,6 +373,22 @@ html {
   color: #eee;
   font-size: 1.05rem;
 }
+
+/* Desktop-specific styles for services cards (>=900px) */
+@media (min-width: 900px) {
+  .services {
+    max-width: 1200px;
+  }
+  .cards {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+  .card {
+    max-width: none;
+    min-width: 220px;
+    margin: 0;
+  }
+}
+
 /* Gallery styles for fotovideo.html */
 .gallery {
   display: grid;
