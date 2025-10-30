@@ -374,8 +374,8 @@ html {
   font-size: 1.05rem;
 }
 
-/* Desktop-specific styles for services cards (>=900px) */
-@media (min-width: 900px) {
+/* Desktop-specific styles for services cards (>900px) */
+@media (min-width: 901px) {
   .services {
     max-width: 1200px;
   }
